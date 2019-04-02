@@ -44,7 +44,6 @@ def cpu_build(a,b):
              c=c+1
              if c==1 and 'x' not in [a[0][0],a[0][1],a[0][2]]:
                  return 0,[0,1,2]
-             
          if a[1][j]==b:
              v=v+1
              if v==1 and 'x' not in [a[1][0],a[1][1],a[1][2]]:
@@ -273,8 +272,9 @@ while True:
           jjv={0:j[0],2:j[1],1:j[2]}
           v,j=jjv[i]
     elif '_' in [a[0][0],a[0][2],a[2][0],a[2][2],a[1][1]]:
-        vjj={0:(0,0),1:(0,2),2:(2,0),3:(2,2),4:(1,1)}
+        vjj={0:(1,1),1:(0,2),2:(2,0),3:(2,2),4:(0,0)}
         v,j=vjj[i]
+
     else:
         v=random.choice([0,1,2])
         j=random.choice([0,1,2])
