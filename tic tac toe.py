@@ -40,6 +40,16 @@ def display():
 def cpu_build(a,b):
     m=l=c=n=w=v=s=p=0
     for j in range(3):
+         if a[j][j]==b:
+             n=n+1
+
+             if n==1 and 'x' not in [a[2][2],a[1][1],a[0][0]]:
+                 return True,[(0,0),(1,1),(2,2)]
+         if a[j][(len(a)-1)-j]==b:
+             p=p+1  
+             if p==1 and 'x' not in [a[0][2],a[1][1],a[2][0]] :
+                 return True,[(0,2),(1,1),(2,0)]
+    for j in range(3):
          if a[0][j]==b:
              c=c+1
              if c==1 and 'x' not in [a[0][0],a[0][1],a[0][2]]:
@@ -65,15 +75,6 @@ def cpu_build(a,b):
              s=s+1
              if s==1:
                  return [0,1,2],2
-    for j in range(3):
-         if a[j][j]==b:
-             n=n+1
-             if n==1 and 'x' not in [a[2][2],a[1][1],a[0][0]]:
-                 return True,[(0,0),(1,1),(2,2)]
-         if a[j][(len(a)-1)-j]==b:
-             p=p+1  
-             if p==1 and 'x' not in [a[0][2],a[1][1],a[2][0]] :
-                 return True,[(0,2),(1,1),(2,0)]
 
 
 def cpu_win(a,b):
@@ -187,7 +188,7 @@ while True:
       mm.append(m) 
       if mm in nn:
           mm.clear()
-          print('dont try to over write')
+          print('You cant go there')
           print()
           continue
       else:
@@ -215,7 +216,7 @@ while True:
         mm.append(j) 
         if mm in nn:
            mm.clear()
-           print('dont try to over write')
+           print('You cant go there')
            print()
            continue
         else:
