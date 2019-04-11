@@ -292,7 +292,7 @@ while True:
        display()
        break
    if check(a,'o'):
-         print('compuer wins!')
+         print('computer wins!')
          break
    if len(nn)==9:
       print('game over')
